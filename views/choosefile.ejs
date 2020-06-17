@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- we are in the public folder here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <title>Choose File</title>
+</head>
+<body>
+    <img src="mylogo.svg" width="250" height="250" class="mylogo">
+    <img src="upload_image.svg" class="illustration" width="750" height="750">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>Step1: <span style="color: #f9a01b;"><b>Select a File</b></span></h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        
+       
+        <input type="file" name="avatar" class="inputfile">
+        <br>
+        <br>
+        
+            <a href="/templatechoose" class="pinkbutton">
+                Next
+            </a>
+        
+    </form>
+    <script>
+        // Add the following code if you want the name of the file appear on select
+        $(".custom-file-input").on("change", function() {
+          var fileName = $(this).val().split("\\").pop();
+          $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+        </script>
+
+</body>
+</html>
